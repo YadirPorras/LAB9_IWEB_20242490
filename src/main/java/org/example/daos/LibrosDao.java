@@ -9,25 +9,23 @@ import java.util.ArrayList;
 import org.example.beans.Libros;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class LibrosDao extends DaoBase{
 
     public ArrayList<Libros> listarLibros() {
 
         ArrayList<Libros> lista = new ArrayList<>();
-        String sql = "SELECT * FROM libro";
+        String sql = "SELECT id_libro, titulo, autor, anio_publicacion FROM libro";
         try (Connection conn = this.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
                 Libros ls = new Libros();
-                ls.setId_libro(rs.getInt("id_libro"));
-                ls.setId_genero(rs.getInt("id_genero"));
-                ls.setTitulo(rs.getString("titulo"));
-                ls.setAutor(rs.getString("autor"));
-                ls.setAnio_publicacion(rs.getInt("anio_publicacion"));
+                ls.setIdLibro(rs.getInt(1));
+                ls.setTitulo(rs.getString(2));
+                ls.setAutor(rs.getString(3));
+                ls.setAnioPublicacion(rs.getInt(4));
                 lista.add(ls);
             }
         } catch (SQLException e) {

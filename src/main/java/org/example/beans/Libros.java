@@ -3,29 +3,26 @@ package org.example.beans;
 import java.sql.Date;
 
 public class Libros {
-    private int id_libro;
-    private int id_genero;
+    private int idLibro;
+    private int idGenero;
     private String titulo;
     private String autor;
-    private int anio_publicacion;
+    private int anioPublicacion;
 
-    public Libros() {
+    public int getIdLibro() {
+        return idLibro;
     }
 
-    public int getId_libro() {
-        return id_libro;
+    public void setIdLibro(int idLibro) {
+        this.idLibro = idLibro;
     }
 
-    public void setId_libro(int id_libro) {
-        this.id_libro = id_libro;
+    public int getIdGenero() {
+        return idGenero;
     }
 
-    public int getId_genero() {
-        return id_genero;
-    }
-
-    public void setId_genero(int id_genero) {
-        this.id_genero = id_genero;
+    public void setIdGenero(int idGenero) {
+        this.idGenero = idGenero;
     }
 
     public String getTitulo() {
@@ -44,12 +41,12 @@ public class Libros {
         this.autor = autor;
     }
 
-    public int getAnio_publicacion() {
-        return anio_publicacion;
+    public int getAnioPublicacion() {
+        return anioPublicacion;
     }
 
-    public void setAnio_publicacion(int anio_publicacion) {
-        this.anio_publicacion = anio_publicacion;
+    public void setAnioPublicacion(int anioPublicacion) {
+        this.anioPublicacion = anioPublicacion;
     }
 
 }
