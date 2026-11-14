@@ -49,6 +49,10 @@ public class LoginServlet extends HttpServlet{
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+        Usuario usuario = usuarioDao.validarUsuarioPassword(email,password);
 
+        if (usuario != null){
+
+        }
     }
 }
